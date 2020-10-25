@@ -24,7 +24,13 @@ namespace CloudMVC
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseKestrel(options => { options.Listen(IPAddress.Any, 80); });
+                    webBuilder.UseKestrel(options =>
+                    {
+                        options.Listen(IPAddress.Any, 80);
+                        // options.Listen(IPAddress.Loopback, port: 8080);
+                        // options.ListenAnyIP(9090);
+                        // options.ListenLocalhost(5005, opts => opts.UseHttps());
+                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }
