@@ -2,7 +2,6 @@ using System.IO;
 using System.Net;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 
 namespace CloudMVC
 {
@@ -18,7 +17,7 @@ namespace CloudMVC
                 .UseStartup<Startup>()
                 .Build();
 
-            host.Run();
+            host.Run(); 
         }
 
         private static IHostBuilder CreateHostBuilder(string[] args) =>
